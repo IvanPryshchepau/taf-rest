@@ -1,0 +1,43 @@
+group 'taf'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'maven'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+configurations{
+    cucumberRuntime{
+        extendsFrom testRuntime
+    }
+}
+
+dependencies {
+    runtime files('src/test/resources')
+    testCompile group: 'info.cukes', name: 'cucumber-junit', version: '1.2.4'
+    testCompile group: 'info.cukes', name: 'cucumber-java', version: '1.2.4'
+    testCompile group: 'info.cukes', name: 'cucumber-core', version: '1.2.4'
+    testCompile group: 'info.cukes', name: 'cucumber-testng', version: '1.2.5'
+
+    compile group: 'com.google.inject', name: 'guice', version: '4.0'
+    compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
+    //Dependencies for Spring DI
+    compile group: 'info.cukes', name: 'cucumber-spring', version: '1.2.4'
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-test', version: '4.3.3.RELEASE'
+    compile group: 'org.springframework', name: 'spring-tx', version: '4.3.3.RELEASE'
+
+    compile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.2'
+    compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.1.0'
+
+    compile group: 'commons-io', name: 'commons-io', version: '2.4'
+
+    compile group: 'com.epam.reportportal', name:'agent-java-cucumber', version: '2.6.1'
+    compile group: 'com.epam.reportportal', name:'client-java-core', version:'2.7.0'
+    compile group: 'com.epam.reportportal', name:'logger-java-log4j', version: '2.6.1'
+}
