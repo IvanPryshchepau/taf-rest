@@ -16,11 +16,11 @@ public class CourseServiceHelper extends BaseHelper{
     }
 
     public String getCourseUnit(){
-        return RestServicesURI.COURSE_SERVICE_URI + "/" + courseId + "/units/" + unitId;
+        return getCourseURI() + "/units/" + unitId;
     }
 
     public String getCourseUnitTest(){
-        return RestServicesURI.COURSE_SERVICE_URI + "/" + courseId + "/units/" + unitId + "/test";
+        return getCourseUnit() + "/test";
     }
 
 }
