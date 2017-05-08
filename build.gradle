@@ -36,11 +36,6 @@ dependencies {
 
     compile group: 'com.google.inject', name: 'guice', version: '4.0'
     compile group: 'org.apache.velocity', name: 'velocity', version: '1.7'
-    //Dependencies for Spring DI
-    compile group: 'info.cukes', name: 'cucumber-spring', version: '1.2.4'
-    compile group: 'org.springframework', name: 'spring-context', version: '4.3.3.RELEASE'
-    compile group: 'org.springframework', name: 'spring-test', version: '4.3.3.RELEASE'
-    compile group: 'org.springframework', name: 'spring-tx', version: '4.3.3.RELEASE'
 
     compile group: 'org.json', name: 'json', version: '20160212'
 
