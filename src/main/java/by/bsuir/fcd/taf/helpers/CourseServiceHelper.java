@@ -5,22 +5,22 @@ import by.bsuir.fcd.taf.constants.RestServicesURI;
 
 import java.util.Map;
 
-public class CourseServiceHelper {
+public class CourseServiceHelper extends BaseHelper{
 
-    private String userId;
+    private String courseId;
     private String unitId;
     private Map<String, Integer> userAnswers;
 
-    public String getUserCoursesURI(){
-        return RestServicesURI.COURSE_SERVICE_URI + "/" + userId;
+    public String getCourseURI(){
+        return RestServicesURI.COURSE_SERVICE_URI + "/" + courseId;
     }
 
-    public String getUserCourseUnit(){
-        return RestServicesURI.COURSE_SERVICE_URI + "/" + userId + "/units/" + unitId;
+    public String getCourseUnit(){
+        return RestServicesURI.COURSE_SERVICE_URI + "/" + courseId + "/units/" + unitId;
     }
 
-    public String getUserCourseUnitTest(){
-        return RestServicesURI.COURSE_SERVICE_URI + "/" + userId + "/units/" + unitId + "/test";
+    public String getCourseUnitTest(){
+        return RestServicesURI.COURSE_SERVICE_URI + "/" + courseId + "/units/" + unitId + "/test";
     }
 
 }
