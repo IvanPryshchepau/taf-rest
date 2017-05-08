@@ -7,13 +7,24 @@ apply plugin: 'maven'
 sourceCompatibility = 1.8
 
 repositories {
-    mavenCentral()
+    mavenLocal()
+    maven {url "https://oss.sonartype.org/content/repositories/releases"}
+    maven {url "http://repo.maven.apache.org/maven2"}
+    maven {url "http://dl.bintray.com/epam/reportportal"}
 }
 
 configurations{
     cucumberRuntime{
         extendsFrom testRuntime
     }
+}
+
+task smoke () {
+
+}
+
+task regression () {
+
 }
 
 dependencies {
@@ -30,6 +41,8 @@ dependencies {
     compile group: 'org.springframework', name: 'spring-context', version: '4.3.3.RELEASE'
     compile group: 'org.springframework', name: 'spring-test', version: '4.3.3.RELEASE'
     compile group: 'org.springframework', name: 'spring-tx', version: '4.3.3.RELEASE'
+
+    compile group: 'org.json', name: 'json', version: '20160212'
 
     compile group: 'io.rest-assured', name: 'rest-assured', version: '3.0.2'
     compile group: 'com.fasterxml.jackson.core', name: 'jackson-databind', version: '2.1.0'

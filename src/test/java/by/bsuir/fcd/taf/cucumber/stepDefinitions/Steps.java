@@ -1,7 +1,16 @@
 package by.bsuir.fcd.taf.cucumber.stepDefinitions;
 
-/**
- * Created by Ivan on 05.05.2017.
- */
+import cucumber.api.java.en.Given;
+import org.json.JSONArray;
+
+import static io.restassured.RestAssured.get;
+
 public class Steps {
+
+    @Given("")
+    public void start(){
+        JSONArray resp = new JSONArray(get("").asString());
+
+    }
+
 }
